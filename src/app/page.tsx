@@ -41,23 +41,26 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[70vh] flex items-center">
-      <div className="absolute inset-0 w-full h-full z-0">
-        <Image
-          src="/art/hero.png"
-          alt="Hero background"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
-          className="pointer-events-none select-none"
-          priority
-        />
-        <div className="absolute inset-0 bg-heroGlow mix-blend-soft-light" />
-      </div>
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src="/art/hero.png"
+            alt="Hero background"
+            fill
+            style={{
+              objectFit: "fill", // Stretches image to fill both width and height
+              objectPosition: "center"
+            }}
+            className="pointer-events-none select-none"
+            priority
+          />
+          <div className="absolute inset-0 bg-heroGlow mix-blend-soft-light" />
+        </div>
       <Container className="relative z-10 flex flex-col items-center justify-center h-full">
         <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-7xl font-bold tracking-tight mb-6">
             Gentle goodbyes at home
           </h1>
-          <p className="text-base sm:text-lg leading-relaxed text-ink-muted max-w-xl mb-8">
+          <p className="text-base text-lg leading-relaxed text-ink-muted font-bold max-w-xl mb-8">
             In-home euthanasia and end-of-life care for pets—centered on compassion, dignity, and support for your family.
           </p>
           <Button asChild
@@ -72,6 +75,7 @@ export default function Home() {
     </section>
       {/* Services */}
       <ServicesSection />
+    
       {/* How it works */}
       <HowItWorks />
 
@@ -79,15 +83,15 @@ export default function Home() {
       <Section id="areas" className="pt-0">
         <Container>
           <Card className="p-6">
-            <SectionHeading>Our <span className="text-brand-600 text-4xl">Service Areas</span></SectionHeading>
+            <SectionHeading>Our <br/><span className="text-brand-600 text-4xl">Service Areas</span></SectionHeading>
             <div className="grid lg:grid-cols-2 gap-6 items-start">
               <div className="space-y-3">
-                <p className="text-sm text-ink-muted">
+                <p className="text-xl text-ink-muted">
                   Southeast Georgia
                   <br />
-                  <span className="font-semibold text-brand-700">Expanding soon</span>
+                  <span className="font-semibold text-sm text-brand-700">Expanding soon</span>
                 </p>
-                <ul className="grid grid-cols-2 gap-2 text-sm">
+                <ul className="grid grid-cols-2 gap-2 text-xl">
                   {[
                     "St. Simons Island",
                     "Brunswick",
@@ -104,9 +108,9 @@ export default function Home() {
                   <Link href="#book">Check availability</Link>
                 </Button>
                 <div></div>
-                <Badge className="text-sm mt-4">
+                <Badge className=" mt-4">
                   If you’re outside our current area, please{" "}
-                  <Link href="/#contact" className="underline underline-offset-4">
+                  <Link href="/#footer" className="underline underline-offset-4">
                     contact us
                   </Link>{" "}
                   to discuss options.
@@ -129,7 +133,7 @@ export default function Home() {
         <Container>
           <Card className="p-6">
             
-            <SectionHeading>Meet <span className="text-brand-600 text-4xl">Dr. Weaver</span></SectionHeading>
+            <SectionHeading>Meet <br></br> <span className="text-brand-600 text-4xl">Dr. Weaver</span></SectionHeading>
             <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
               <Image
                 src="/art/woman-and-cat.png"
@@ -138,7 +142,7 @@ export default function Home() {
                 height={80}
                 className="rounded-lg"
               />
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-lg">
                 <p>
                   Dr. Missy (Melissa) Weaver is a small-animal veterinarian based in the
                   Golden Isles. She leads medical care at a no-kill shelter in

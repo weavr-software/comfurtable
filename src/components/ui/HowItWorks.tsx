@@ -13,7 +13,7 @@ export function HowItWorks() {
     },
     {
       icon: "🏠",
-      title: "Home visit",
+      title: "Home Visit",
       desc:
         "We arrive with everything needed for a peaceful, dignified farewell. Your family sets the pace and environment.",
     },
@@ -34,7 +34,7 @@ export function HowItWorks() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Content block (first on small, right on lg) */}
           <div className="order-1 lg:order-2">
-            <SectionHeading>Here is 
+            <SectionHeading>Here is <br />
               <span className="text-brand-600 font-semibold text-4xl"> How it Works</span>
             </SectionHeading>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
@@ -47,8 +47,8 @@ export function HowItWorks() {
                     <span className="text-4xl" aria-hidden="true">
                       {step.icon}
                     </span>
-                    <h4 className="font-semibold text-brand-700">{step.title}</h4>
-                    <p className="text-sm text-ink-muted">{step.desc}</p>
+                    <h4 className="font-semibold text-3xl text-brand-700">{step.title}</h4>
+                    <p className="text-xl text-ink-muted">{step.desc}</p>
                   </div>
                 </Card>
               ))}
@@ -57,7 +57,7 @@ export function HowItWorks() {
 
           {/* Image block (second on small, left on lg) */}
           <div className="order-2 lg:order-1">
-            <div className="relative aspect-[4/3] w-full ">
+            <div className="relative aspect-[4/3] d w-full ">
               <Image
                 src="/art/dog-and-cat.png"
                 alt="Hands gently holding a pet’s paw"

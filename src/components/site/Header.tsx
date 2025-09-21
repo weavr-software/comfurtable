@@ -47,7 +47,7 @@ export function Header() {
             Call
           </a>
           <Button className="hidden" asChild>
-            <Link className="w-20" href="/book">Book</Link>
+            <Link className="w-20" href="#book">Book</Link>
           </Button>
         </div>
       </Container>

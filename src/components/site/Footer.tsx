@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 export function Footer() {
   return (
     <footer className="border-t border-border">
-      <Container className="py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <Container id="footer" className="py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <Image src="/logo/comfurtable-icon.png" alt="comfurtable logo" width={36} height={36} />
           <div>
