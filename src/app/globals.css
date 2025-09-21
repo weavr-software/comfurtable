@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
+/* ---- Brand theme ---- */
+@theme {
+  /* Colors */
+  --color-bg: #faf8f3;
+  --color-bg-subtle: #f1eee8;
+  --color-bg-card: #ffffff;
+
+  --color-ink: #3b3b3b;
+  --color-ink-muted: #5c5c5c;
+
+  --color-brand-50:  #f1f6f5;
+  --color-brand-100: #d9e7e5;
+  --color-brand-200: #b4d0cb;
+  --color-brand-300: #8db8b1;
+  --color-brand-400: #6ba59d;
+  --color-brand-500: #4e8f86;
+  --color-brand-600: #447a72; /* primary teal */
+  --color-brand-700: #37635c;
+  --color-brand-800: #2a4b45;
+  --color-brand-900: #1e3531;
+
+  --color-border: rgba(0,0,0,0.08);
+  --color-border-soft: rgba(60,60,60,0.15);
+
+  /* Radius */
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* Shadow */
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* Base page look */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  @apply bg-bg text-ink;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reusable utilities */
+@utility card {
+  @apply bg-bg-card rounded-2xl shadow-card border border-border;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility chip {
+  @apply inline-flex items-center rounded-full border border-border-soft px-3 py-1 text-xs text-ink-muted;
+}
+
+/* Optional hero background */
+.hero-glow {
+  background: radial-gradient(60% 60% at 50% 0%, #eef2f0 0%, rgba(0,0,0,0) 60%);
 }
