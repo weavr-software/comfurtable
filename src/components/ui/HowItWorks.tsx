@@ -9,19 +9,19 @@ export function HowItWorks() {
       icon: "🗨️",
       title: "Consult",
       desc:
-        "Connect with our veterinarian to discuss your pet’s comfort, needs, and family wishes. We’ll guide you through every step.",
+        "Connect with Dr. Weaver to discuss your pet’s comfort, needs, and family wishes. We’ll guide you through every step.",
     },
     {
       icon: "🏠",
       title: "Home Visit",
       desc:
-        "We arrive with everything needed for a peaceful, dignified farewell. Your family sets the pace and environment.",
+        "Dr Weaver will arrive with everything needed for a peaceful, dignified farewell. Your family sets the pace and environment.",
     },
     {
       icon: "🌱",
       title: "Aftercare",
       desc:
-        "We coordinate cremation, memorials, and grief support. You’ll receive resources and follow-up care.",
+        "Dr. Weaver will coordinate cremation, memorials, and grief support"
     },
   ];
 

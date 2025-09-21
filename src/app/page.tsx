@@ -68,7 +68,7 @@ export default function Home() {
             variant="secondary"
             className="bg-bg border-brand-600 border-2"
           >
-            <Link href="#book">Book a consultation</Link>
+            <Link href="#book">Book a Consultation</Link>
           </Button>
         </div>
       </Container>
@@ -144,11 +144,12 @@ export default function Home() {
               />
               <div className="space-y-3 text-lg">
                 <p>
-                  Dr. Missy (Melissa) Weaver is a small-animal veterinarian based in the
-                  Golden Isles. She leads medical care at a no-kill shelter in
-                  Brunswick/St. Simons and performs community spay/neuter and shelter
-                  surgeries. She’s known for compassionate client communication and
-                  calm, fear-free handling.
+                  Dr. Missy Weaver is a graduate of the University of Georgia and has been  
+                  working in the Golden Isles veterinary community for over 25 years. 
+                  For 14 years, she has been the lead veterinarian at the Humane Society of South Coastal Georgia. 
+                  She has spent her career advocating for small animal welfare and the human/animal bond. In her free time, 
+                  Dr Weaver and her husband, Dr. John Weaver, a local orthodontist are raising 5 boys, 3 dogs and 3 cats. 
+                  She enjoys gardening, spending time with her family and traveling.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-2">
                   <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-600" /> 25+ years in small-animal medicine</li>
@@ -166,6 +167,18 @@ export default function Home() {
       <Section id="book" className="pt-0">
       <Container>
         <SectionHeading>Book a Service</SectionHeading>
+        <details className="group mt-4">
+    <summary className="cursor-pointer text-2xl font-semibold text-brand-700 flex items-center justify-between py-2 px-3 rounded-lg bg-brand-50 hover:bg-brand-100 transition">
+      What’s included?
+      <span className="ml-2 text-xl transition-transform group-open:rotate-45">+</span>
+    </summary>
+    <div className="mt-3 text-base text-xl text-ink-muted px-3 pb-2">
+      This will include time for Dr. Weaver to meet with you and your pet to answer any questions that your 
+      family has about the euthanasia process. <br/> <br/>Your pet will first quietly receive pain and sedation medications. 
+      This will allow you time for gentle goodbyes. The final steps will be under general anesthesia so there is no discomfort. You may remain with your pet throughout this process and can spend private time with your pet at any point. 
+      <br/><br/>After your goodbyes, if cremation is elected, Dr. Weaver will respectfully prepare and transfer your loved one to the crematory. If burial is elected, Dr. Weaver does not have the capability to assist at this time.
+    </div>
+  </details>
         <div className="my-8">
           <BookingWidget />
         </div>
@@ -181,17 +194,12 @@ export default function Home() {
               {
                 q: "What should we expect during the visit?",
                 a:
-                  "Your pet is gently sedated first. We move at your family’s pace and welcome favorite blankets, music, or rituals.",
+                  "Your pet is gently sedated first. Dr. Weaver will move at your family’s pace and welcome favorite blankets, music, or rituals.",
               },
               {
                 q: "Can children or other pets be present?",
                 a:
-                  "Yes. We’ll guide you on ways to involve them in a healthy, supportive manner.",
-              },
-              {
-                q: "Do you offer paw prints or memorials?",
-                a:
-                  "Yes. We can create paw prints and share keepsake options, and we provide grief resources.",
+                  "Yes. Dr. Weaver will guide you on ways to involve them in a healthy, supportive manner.",
               },
               {
                 q: "How far in advance should we book?",
@@ -200,7 +208,7 @@ export default function Home() {
               },
             ].map(({ q, a }) => (
               <details key={q} className="group card p-5">
-                <summary className="cursor-pointer list-none font-medium flex items-center justify-between">
+                <summary className="cursor-pointer text-brand-600 list-none font-medium flex items-center justify-between">
                   {q}
                   <span className="transition-transform group-open:rotate-45 text-xl">+</span>
                 </summary>
