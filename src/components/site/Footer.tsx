@@ -15,8 +15,8 @@ export function Footer() {
         <div className="text-sm text-ink-muted">
           © {new Date().getFullYear()} comfurtable • 
           <a className="underline underline-offset-4" href="mailto:confurtablepets@gmail.com">confurtablepets@gmail.com</a> • 
-          <a href="tel:+1-912-230-0243" className="underline underline-offset-4" >
-            (912)-230-0243
+          <a href="tel:+1-912-207-8612" className="underline underline-offset-4" >
+            (912)-207-8612
           </a>
         </div>
       </Container>
