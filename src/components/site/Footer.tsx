@@ -34,7 +34,7 @@ export function Footer() {
             <div className="mt-2 p-4 bg-brand-50 border border-brand-100 rounded text-xs text-ink-muted max-w-lg">
               <strong>comfurtable Terms and Conditions / Privacy Policy</strong>
               <br />
-              comfurtable respects your privacy. By opting into our SMS messaging service, you agree to the following terms regarding how we handle your data:
+              Melissa R Weaver DVM, PC Comfurtable respects your privacy. By opting into our SMS messaging service, you agree to the following terms regarding how we handle your data:
               <ul className="list-disc pl-5 my-2 space-y-1">
                 <li>
                   <strong>Data Collection:</strong> We will collect your name, email address, mailing address, and mobile phone number when you sign up for SMS updates. The information will be collected via the website contact form, email, rental agreement, or third-party reservation systems.
@@ -55,7 +55,7 @@ export function Footer() {
                   Messages are recurring, and message frequency varies.
                 </li>
                 <li>
-                  Contact comfurtable at (912)-207-8612 or confurtablepets@gmail.com for HELP or to STOP receiving messages.
+                  Contact Melissa R Weaver DVM, PC Comfurtable at (912)-207-8612 or confurtablepets@gmail.com for HELP or to STOP receiving messages.
                 </li>
                 <li>
                   <strong>Opt-Out:</strong> You can opt out of the SMS list at any time by texting, emailing, or replying STOP or UNSUBSCRIBE to confurtablepets@gmail.com or (912)-207-8612. After unsubscribing, you will receive a final SMS to confirm you have unsubscribed and we will remove your number from our list within 24 hours.
@@ -64,10 +64,10 @@ export function Footer() {
                   You can send HELP for additional assistance, and you will receive a text including our phone number, email, and website. We are here to help you.
                 </li>
                 <li>
-                  <strong>Non-Sharing Clause:</strong> We do not share your data with third parties for marketing purposes. comfurtable will not sell, rent, or share the collected mobile numbers.
+                  <strong>Non-Sharing Clause:</strong> We do not share your data with third parties for marketing purposes. Melissa R Weaver DVM, PC Comfurtable will not sell, rent, or share the collected mobile numbers.
                 </li>
               </ul>
-              <div className="mt-2">Thanks for choosing comfurtable!</div>
+              <div className="mt-2">Thanks for choosing Melissa R Weaver DVM, PC Comfurtable!</div>
             </div>
           )}
         </div>
