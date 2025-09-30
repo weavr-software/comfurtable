@@ -194,7 +194,7 @@ export default function Home() {
               {
                 q: "What should we expect during the visit?",
                 a:
-                  "Your pet is gently sedated first. Dr. Weaver will move at your family’s pace and welcome favorite blankets, music, or rituals.",
+                  "Dr. Weaver will discuss any final questions of concerns with your family. Next,your pet is gently sedated and time is allowed for private goodbyes. <br/>Following this step, your pet will be anesthetized to ensure absolutely no pain, fear or discomfort. ,br/>Finally, Dr. Weaver will administer the euthnasia medidations. Dr. Weaver will move at your family’s pace and welcome favorite blankets, music, or rituals.",
               },
               {
                 q: "Can children or other pets be present?",
