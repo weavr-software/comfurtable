@@ -206,6 +206,11 @@ export default function Home() {
                 a:
                   "Same-day consults are sometimes available. For preferred times, booking 2–3 days in advance is best.",
               },
+              {
+                q: "What should we expect during the visit?",
+                a:
+                  "Your pet is gently sedated first. Dr. Weaver will move at your family’s pace and welcome favorite blankets, music, or rituals.",
+              },
             ].map(({ q, a }) => (
               <details key={q} className="group card p-5">
                 <summary className="cursor-pointer text-brand-600 list-none font-medium flex items-center justify-between">
