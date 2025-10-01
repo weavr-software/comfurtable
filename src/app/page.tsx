@@ -207,9 +207,14 @@ export default function Home() {
                   "Same-day consults are sometimes available. For preferred times, booking 2–3 days in advance is best.",
               },
               {
-                q: "What should we expect during the visit?",
+                q: "How will I know when its time?",
                 a:
-                  "Your pet is gently sedated first. Dr. Weaver will move at your family’s pace and welcome favorite blankets, music, or rituals.",
+                  "You and your family will begin to notice changes in eating, drinking, activity and play. You may see pain and discomfort that can no longer be treated successfully. If you trust your bond with your pet, you will know when it is time to say goodbye. ",
+              },
+              {
+                q: "What about aggressive pets or behavior problems?",
+                a:
+                  "Please discuss any issues with Dr. Weaver in advance of the appointment. We have experience dealing with difficult behaviors, and can offer medication and other behavior modification support to allow for a more peaceful appointment for your family and your pet. ",
               },
             ].map(({ q, a }) => (
               <details key={q} className="group card p-5">
