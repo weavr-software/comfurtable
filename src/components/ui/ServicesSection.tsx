@@ -10,20 +10,20 @@ export function ServicesSection() {
   const services = [
     {
       title: "In-home euthanasia",
-      desc: "A peaceful, veterinarian-led goodbye in the comfort of your home. Includes gentle sedation, pain relief, time for your family, and supportive guidance throughout the process.",
-      price: "$400",
+      desc: "A peaceful, veterinarian-led goodbye in the comfort of your home. Includes gentle sedation, pain relief, time for your family, and supportive guidance throughout the process. This selection is for home burial. Dr. Weaver is unable to assist with the burial at this time.",
+      price: "$375",
       art: "/art/paw-heart.png",
     },
     {
-      title: "Cremation & Aftercare",
-      desc: "We coordinate cremation, memorial keepsakes, paw prints, and grief resources. Choose private or communal options. Memorials delivered to your home.",
-      price: "+$150–$300",
+      title: "Euthanasia with Communal Cremation",
+      desc: "This selection should be chosen if you wish to have your pet cremated without the return of ashes. Other keepsakes, such as a paw print are available.",
+      price: "$500",
       art: "/art/hands-paw.png",
     },
     {
-      title: "Grief consulting",
-      desc: "Compassionate support for families before and after loss. Virtual or in-person sessions. Guidance for children, other pets, and memorial planning.",
-      price: "$100",
+      title: "Euthanasia with Private Cremation ",
+      desc: "This selection should be chosen if you would like your pets ashes returned to you. This selection will include an urn, a clay paw print and a lock of hair. Your pets ashes will be returned in one to two weeks. Options for return of ashes: Shipped to you -delivered to your home by Dr. Weaver",
+      price: "$700",
       art: "/art/sofa-dog-cat.png",
     },
   ];
@@ -35,7 +35,7 @@ export function ServicesSection() {
         >
       
       <Container>
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Heading + carousel */}
           <div>
             <SectionHeading>We offer a variety of 

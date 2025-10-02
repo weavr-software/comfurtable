@@ -19,8 +19,8 @@ export function Footer() {
           <div>
             © {new Date().getFullYear()} comfurtable •{" "}
             <a className="underline underline-offset-4" href="mailto:confurtablepets@gmail.com">confurtablepets@gmail.com</a> •{" "}
-            <a href="tel:+1-912-207-8612" className="underline underline-offset-4">
-              (912)-207-8612
+            <a href="tel:+1-912-357-3329" className="underline underline-offset-4">
+              (912)-357-3329
             </a>
           </div>
           <button
