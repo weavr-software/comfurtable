@@ -41,9 +41,9 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:+1-912-230-0243"
+            href="tel:+1-912-357-3329"
             className="hidden sm:inline-block rounded-full border border-border-soft px-4 py-2 text-sm hover:bg-bg-subtle"
-            aria-label="Call Comfurtable at (912) 230-0243"
+            aria-label="Call Comfurtable at (912) 357-3329"
           >
             Call
           </a>

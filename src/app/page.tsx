@@ -109,10 +109,10 @@ export default function Home() {
                 </Button>
                 <div></div>
                 <Badge className=" mt-4">
-                  If you’re outside our current area, please{" "}
-                  <Link href="/#footer" className="underline underline-offset-4">
+                  If you're outside our current area, please{" "}
+                  <a href="mailto:comfurtablepet@gmail.com" className="underline underline-offset-4">
                     contact us
-                  </Link>{" "}
+                  </a>{" "}
                   to discuss options.
                 </Badge>
               </div>

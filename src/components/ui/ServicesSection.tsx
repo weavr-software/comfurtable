@@ -25,7 +25,7 @@ export function ServicesSection() {
     {
       title: "Euthanasia with Private Cremation ",
       desc: "This selection should be chosen if you would like your pets ashes returned to you. This selection will include an urn, a clay paw print and a lock of hair. Your pets ashes will be returned in one to two weeks. Options for return of ashes: Shipped to you delivered to your home by Dr. Weaver",
-      price: "$700",
+      price: "$600",
       art: "/art/sofa-dog-cat.png",
       altText: "Dog and cat together representing peaceful pet companionship",
     },
