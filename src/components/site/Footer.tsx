@@ -6,20 +6,20 @@ export function Footer() {
   const [showPolicy, setShowPolicy] = useState(false);
 
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border" itemScope itemType="https://schema.org/WPFooter">
       <Container id="footer" className="py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <Image src="/logo/comfurtable-icon.png" alt="comfurtable logo" width={36} height={36} />
+          <Image src="/logo/comfurtable-icon.png" alt="Comfurtable in-home pet euthanasia logo" width={36} height={36} />
           <div>
-            <Image src="/logo/comfurtable-header.png" alt="comfurtable logo" width={180} height={36} />
+            <Image src="/logo/comfurtable-header.png" alt="Comfurtable - Compassionate pet care" width={180} height={36} />
             <p className="text-xs text-ink-muted">Gentle goodbyes at home</p>
           </div>
         </div>
         <div className="text-sm text-ink-muted flex flex-col gap-2">
           <div>
             © {new Date().getFullYear()} comfurtable •{" "}
-            <a className="underline underline-offset-4" href="mailto:confurtablepets@gmail.com">confurtablepets@gmail.com</a> •{" "}
-            <a href="tel:+1-912-357-3329" className="underline underline-offset-4">
+            <a className="underline underline-offset-4" href="mailto:confurtablepets@gmail.com" aria-label="Email Comfurtable">confurtablepets@gmail.com</a> •{" "}
+            <a href="tel:+1-912-357-3329" className="underline underline-offset-4" aria-label="Call Comfurtable at (912) 357-3329">
               (912)-357-3329
             </a>
           </div>

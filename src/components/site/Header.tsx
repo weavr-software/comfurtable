@@ -10,10 +10,10 @@ export function Header() {
       <Container className="py-4 flex items-center justify-between">
         {/* Responsive header logo */}
         <div className="flex items-center gap-3">
-      <Link href="/" aria-label="Comfurtable home">
+      <Link href="/" aria-label="Comfurtable home - In-home pet euthanasia services">
         <Image
           src="/logo/comfurtable-header.png"
-          alt="Comfurtable"
+          alt="Comfurtable - In-Home Pet Euthanasia Services Southeast Georgia"
           width={380}
           height={40}
           priority
@@ -23,7 +23,7 @@ export function Header() {
       </Link>
       <Image
         src="/logo/comfurtable-icon.png"
-        alt="Comfurtable icon"
+        alt="Comfurtable pet care logo"
         width={40}
         height={40}
         priority
@@ -32,7 +32,7 @@ export function Header() {
       />
     </div>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden md:flex items-center gap-6 text-sm" aria-label="Main navigation">
           <Link href="#services" className="hover:underline underline-offset-4">Services</Link>
           <Link href="#how" className="hover:underline underline-offset-4">How it works</Link>
           <Link href="#areas" className="hover:underline underline-offset-4">Service areas</Link>
@@ -43,6 +43,7 @@ export function Header() {
           <a
             href="tel:+1-912-230-0243"
             className="hidden sm:inline-block rounded-full border border-border-soft px-4 py-2 text-sm hover:bg-bg-subtle"
+            aria-label="Call Comfurtable at (912) 230-0243"
           >
             Call
           </a>

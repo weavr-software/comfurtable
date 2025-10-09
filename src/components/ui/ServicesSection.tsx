@@ -11,20 +11,23 @@ export function ServicesSection() {
     {
       title: "In-home euthanasia",
       desc: "A peaceful, veterinarian-led goodbye in the comfort of your home. Includes gentle sedation, pain relief, time for your family, and supportive guidance throughout the process. This selection is for home burial. Dr. Weaver is unable to assist with the burial at this time.",
-      price: "$375",
+      price: "$400",
       art: "/art/paw-heart.png",
+      altText: "Heart with paw print symbolizing love and compassion for pets",
     },
     {
       title: "Euthanasia with Communal Cremation",
       desc: "This selection should be chosen if you wish to have your pet cremated without the return of ashes. Other keepsakes, such as a paw print are available.",
       price: "$500",
       art: "/art/hands-paw.png",
+      altText: "Human hand holding pet paw representing bond and farewell",
     },
     {
       title: "Euthanasia with Private Cremation ",
-      desc: "This selection should be chosen if you would like your pets ashes returned to you. This selection will include an urn, a clay paw print and a lock of hair. Your pets ashes will be returned in one to two weeks. Options for return of ashes: Shipped to you -delivered to your home by Dr. Weaver",
+      desc: "This selection should be chosen if you would like your pets ashes returned to you. This selection will include an urn, a clay paw print and a lock of hair. Your pets ashes will be returned in one to two weeks. Options for return of ashes: Shipped to you delivered to your home by Dr. Weaver",
       price: "$700",
       art: "/art/sofa-dog-cat.png",
+      altText: "Dog and cat together representing peaceful pet companionship",
     },
   ];
 
@@ -78,7 +81,7 @@ export function ServicesSection() {
           <div className="flex justify-center items-center mt-8 md:mt-0">
             <Image
               src="/art/hands-paw.png"
-              alt="Hands and paw"
+              alt="Compassionate connection between pet owner and beloved pet during end-of-life care"
               width={440}
               height={320}
               className="rounded-xl w-full w-10 sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"

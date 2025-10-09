@@ -36,15 +36,15 @@ function BookingWidget() {
 export default function Home() {
 
   return (
-    <div className="min-h-screen bg-bg text-ink">
+    <main className="min-h-screen bg-bg text-ink">
       <Header />
 
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[70vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[70vh] flex items-center" aria-label="Welcome to Comfurtable">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
             src="/art/hero.png"
-            alt="Hero background"
+            alt="Peaceful in-home pet euthanasia - compassionate veterinary care"
             fill
             style={{
               objectFit: "fill", // Stretches image to fill both width and height
@@ -137,7 +137,7 @@ export default function Home() {
             <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
               <Image
                 src="/art/woman-and-cat.png"
-                alt="Woman and cat"
+                alt="Dr. Missy Weaver - Veterinarian with 25+ years experience in pet care"
                 width={300}
                 height={80}
                 className="rounded-lg"
@@ -230,6 +230,6 @@ export default function Home() {
       </Section>
 
       <Footer />
-    </div>
+    </main>
   );
 }
