@@ -229,6 +229,30 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* Contact Us */}
+      <Section id="contact" className="pt-0 pb-28">
+        <Container>
+          <SectionHeading>Contact Us</SectionHeading>
+          <Card className="p-8 text-center">
+            <p className="text-lg text-ink-muted mb-6">
+              Have questions or need to discuss your pet's care? We're here to help.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild variant="primary" size="lg">
+                <a href="mailto:comfurtablepets@gmail.com">
+                  Email Us
+                </a>
+              </Button>
+              <Button asChild variant="secondary" size="lg">
+                <a href="tel:+1-912-357-3329">
+                  Call (912) 357-3329
+                </a>
+              </Button>
+            </div>
+          </Card>
+        </Container>
+      </Section>
+
       <Footer />
     </main>
   );
