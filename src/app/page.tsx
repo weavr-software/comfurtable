@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Container } from "@/components/ui/Container";
@@ -109,7 +109,7 @@ export default function Home() {
                 </Button>
                 <div></div>
                 <Badge className=" mt-4">
-                  If you're outside our current area, please{" "}
+                  If you&apos;re outside our current area, please{" "}
                   <a href="mailto:comfurtablepet@gmail.com" className="underline underline-offset-4">
                     contact us
                   </a>{" "}
@@ -235,7 +235,7 @@ export default function Home() {
           <SectionHeading>Contact Us</SectionHeading>
           <Card className="p-8 text-center">
             <p className="text-lg text-ink-muted mb-6">
-              Have questions or need to discuss your pet's care? We're here to help.
+              Have questions or need to discuss your pet&apos;s care? We&apos;re here to help.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="primary" size="lg">
