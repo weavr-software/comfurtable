@@ -70,8 +70,5 @@ span:not([contenteditable="true"]) {
 }
 
 /* Hide spell check markers */
-::spelling-error {
-  background: transparent !important;
-  color: inherit !important;
-  text-decoration: none !important;
-}
+/* Note: ::spelling-error is non-standard and not supported by all CSS parsers */
+/* Removed to fix build compatibility */
