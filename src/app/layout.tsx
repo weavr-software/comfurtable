@@ -183,7 +183,7 @@ export default function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": "Euthanasia with Private Cremation",
-            "description": "Includes return of ashes, urn, clay paw print and lock of hair"
+            "description": "Includes return of ashes and urn"
           },
           "price": "700",
           "priceCurrency": "USD"
