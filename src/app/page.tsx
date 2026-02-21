@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { ServicesSection } from "@/components/ui/ServicesSection";
 import { HowItWorks } from "@/components/ui/HowItWorks";
+import { config } from "@/lib/config";
 
 function BookingWidget() {
   useEffect(() => {
@@ -25,7 +26,7 @@ function BookingWidget() {
     <div className="rounded-2xl border border-border overflow-hidden">
       <Cal
         namespace="in-home-euthanasia"
-        calLink="comfurtable-m2oz1h/in-home-euthanasia"
+        calLink={config.calComLink}
         style={{ width: "100%", height: "640px", overflow: "auto" }}
         config={{ layout: "month_view" }}
       />
@@ -55,27 +56,27 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-heroGlow mix-blend-soft-light" />
         </div>
-      <Container className="relative z-10 flex flex-col items-center justify-center h-full">
-        <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="text-4xl sm:text-7xl font-bold tracking-tight mb-6">
-            Gentle goodbyes at home
-          </h1>
-          <p className="text-base text-lg leading-relaxed text-ink-muted font-bold max-w-xl mb-8">
-            In-home euthanasia and end-of-life care for pets—centered on compassion, dignity, and support for your family.
-          </p>
-          <Button asChild
-            size="lg"
-            variant="secondary"
-            className="bg-bg border-brand-600 border-2"
-          >
-            <Link href="#book">Book a Consultation</Link>
-          </Button>
-        </div>
-      </Container>
-    </section>
+        <Container className="relative z-10 flex flex-col items-center justify-center h-full">
+          <div className="flex flex-col items-center justify-center text-center">
+            <h1 className="text-4xl sm:text-7xl font-bold tracking-tight mb-6">
+              Gentle goodbyes at home
+            </h1>
+            <p className="text-base text-lg leading-relaxed text-ink-muted font-bold max-w-xl mb-8">
+              In-home euthanasia and end-of-life care for pets—centered on compassion, dignity, and support for your family.
+            </p>
+            <Button asChild
+              size="lg"
+              variant="secondary"
+              className="bg-bg border-brand-600 border-2"
+            >
+              <Link href="#book">Book a Consultation</Link>
+            </Button>
+          </div>
+        </Container>
+      </section>
       {/* Services */}
       <ServicesSection />
-    
+
       {/* How it works */}
       <HowItWorks />
 
@@ -83,7 +84,7 @@ export default function Home() {
       <Section id="areas" className="pt-0">
         <Container>
           <Card className="p-6">
-            <SectionHeading>Our <br/><span className="text-brand-600 text-4xl">Service Areas</span></SectionHeading>
+            <SectionHeading>Our <br /><span className="text-brand-600 text-4xl">Service Areas</span></SectionHeading>
             <div className="grid lg:grid-cols-2 gap-6 items-start">
               <div className="space-y-3">
                 <p className="text-xl text-ink-muted">
@@ -132,7 +133,7 @@ export default function Home() {
       <Section id="bio" className="pt-0">
         <Container>
           <Card className="p-6">
-            
+
             <SectionHeading>Meet <br></br> <span className="text-brand-600 text-4xl">Dr. Weaver</span></SectionHeading>
             <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
               <Image
@@ -144,11 +145,11 @@ export default function Home() {
               />
               <div className="space-y-3 text-lg">
                 <p>
-                  Dr. Missy Weaver is a graduate of the University of Georgia and has been  
-                  working in the Golden Isles veterinary community for over 25 years. 
-                  For 14 years, she has been the lead veterinarian at the Humane Society of South Coastal Georgia. 
-                  She has spent her career advocating for small animal welfare and the human/animal bond. In her free time, 
-                  Dr Weaver and her husband, Dr. John Weaver, a local orthodontist are raising 5 boys, 3 dogs and 3 cats. 
+                  Dr. Missy Weaver is a graduate of the University of Georgia and has been
+                  working in the Golden Isles veterinary community for over 25 years.
+                  For 14 years, she has been the lead veterinarian at the Humane Society of South Coastal Georgia.
+                  She has spent her career advocating for small animal welfare and the human/animal bond. In her free time,
+                  Dr Weaver and her husband, Dr. John Weaver, a local orthodontist are raising 5 boys, 3 dogs and 3 cats.
                   She enjoys gardening, spending time with her family and traveling.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-2">
@@ -165,25 +166,25 @@ export default function Home() {
 
       {/* Booking Calendar */}
       <Section id="book" className="pt-0">
-      <Container>
-        <SectionHeading>Book a Service</SectionHeading>
-        <details className="group mt-4">
-    <summary className="cursor-pointer text-2xl font-semibold text-brand-700 flex items-center justify-between py-2 px-3 rounded-lg bg-brand-50 hover:bg-brand-100 transition">
-      What’s included?
-      <span className="ml-2 text-xl transition-transform group-open:rotate-45">+</span>
-    </summary>
-    <div className="mt-3 text-base text-xl text-ink-muted px-3 pb-2">
-      This will include time for Dr. Weaver to meet with you and your pet to answer any questions that your 
-      family has about the euthanasia process. <br/> <br/>Your pet will first quietly receive pain and sedation medications. 
-      This will allow you time for gentle goodbyes. The final steps will be under general anesthesia so there is no discomfort. You may remain with your pet throughout this process and can spend private time with your pet at any point. 
-      <br/><br/>After your goodbyes, if cremation is elected, Dr. Weaver will respectfully prepare and transfer your loved one to the crematory. If burial is elected, Dr. Weaver does not have the capability to assist at this time.
-    </div>
-  </details>
-        <div className="my-8">
-          <BookingWidget />
-        </div>
-      </Container>
-    </Section>
+        <Container>
+          <SectionHeading>Book a Service</SectionHeading>
+          <details className="group mt-4">
+            <summary className="cursor-pointer text-2xl font-semibold text-brand-700 flex items-center justify-between py-2 px-3 rounded-lg bg-brand-50 hover:bg-brand-100 transition">
+              What’s included?
+              <span className="ml-2 text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div className="mt-3 text-base text-xl text-ink-muted px-3 pb-2">
+              This will include time for Dr. Weaver to meet with you and your pet to answer any questions that your
+              family has about the euthanasia process. <br /> <br />Your pet will first quietly receive pain and sedation medications.
+              This will allow you time for gentle goodbyes. The final steps will be under general anesthesia so there is no discomfort. You may remain with your pet throughout this process and can spend private time with your pet at any point.
+              <br /><br />After your goodbyes, if cremation is elected, Dr. Weaver will respectfully prepare and transfer your loved one to the crematory. If burial is elected, Dr. Weaver does not have the capability to assist at this time.
+            </div>
+          </details>
+          <div className="my-8">
+            <BookingWidget />
+          </div>
+        </Container>
+      </Section>
 
       {/* FAQ */}
       <Section id="faq" className="pt-0 pb-28">
