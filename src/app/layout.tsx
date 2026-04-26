@@ -91,7 +91,7 @@ export default function RootLayout({
     "image": `${config.siteUrl}/art/hero.png`,
     "telephone": "+1-912-357-3329",
     "email": config.email,
-    "priceRange": "$400-$600",
+    "priceRange": "$500-$700",
     "areaServed": [
       {
         "@type": "City",

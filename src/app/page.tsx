@@ -41,19 +41,19 @@ const visitSteps = [
 const pricingOptions = [
   {
     title: "In-home euthanasia",
-    price: "$400",
+    price: "$500",
     details:
       "Includes the home visit, gentle sedation, peaceful euthanasia, time for goodbyes, and guidance for families planning home burial.",
   },
   {
     title: "With communal cremation",
-    price: "$500",
+    price: "$600",
     details:
       "Includes the full visit plus respectful aftercare coordination when you would like cremation without the return of ashes.",
   },
   {
     title: "With private cremation",
-    price: "$600",
+    price: "$700",
     details:
       "Includes the full visit, private cremation, an urn, and the return of your pet's ashes within about one to two weeks.",
   },
@@ -254,7 +254,7 @@ export default function Home() {
               </SectionHeading>
               <p className="text-lg leading-8 text-ink-muted">
                 Families often feel more at ease when they know what is included. Our
-                base in-home euthanasia service begins at $400 and always includes
+                base in-home euthanasia service begins at $500 and always includes
                 compassionate guidance, the home visit itself, gentle sedation, and
                 time for meaningful goodbyes.
               </p>
