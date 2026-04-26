@@ -76,19 +76,19 @@ export default function BrunswickPage() {
           </SectionHeading>
           <div className="grid gap-4 md:grid-cols-3">
             <Card className="p-6">
-              <p className="text-xl font-semibold text-brand-900">$500</p>
+              <p className="text-xl font-semibold text-brand-900">$400</p>
               <p className="mt-3 text-base leading-7 text-ink-muted">
                 Home visit, sedation, peaceful euthanasia, and time for private goodbyes.
               </p>
             </Card>
             <Card className="p-6">
-              <p className="text-xl font-semibold text-brand-900">$600</p>
+              <p className="text-xl font-semibold text-brand-900">$500</p>
               <p className="mt-3 text-base leading-7 text-ink-muted">
                 Includes communal cremation coordination after the visit.
               </p>
             </Card>
             <Card className="p-6">
-              <p className="text-xl font-semibold text-brand-900">$700</p>
+              <p className="text-xl font-semibold text-brand-900">$600</p>
               <p className="mt-3 text-base leading-7 text-ink-muted">
                 Includes private cremation, an urn, and the return of your pet&apos;s ashes.
               </p>
