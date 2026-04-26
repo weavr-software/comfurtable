@@ -94,6 +94,31 @@ export default function BrunswickPage() {
               </p>
             </Card>
           </div>
+          <Card className="mt-5 p-6">
+            <h3 className="text-xl font-semibold text-brand-900">Optional memorial add-ons</h3>
+            <p className="mt-3 text-base leading-7 text-ink-muted">
+              Memorial paw prints are available upon request and can be arranged when
+              you schedule online or when you call or text Dr. Weaver.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {config.memorialAddOns.map((item) => (
+                <div
+                  key={item.name}
+                  className="rounded-2xl border border-border bg-bg px-4 py-4"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-base font-semibold text-brand-900">{item.name}</p>
+                    <span className="rounded-full bg-brand-700 px-3 py-1 text-sm font-semibold text-white">
+                      {item.price}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-ink-muted">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Card>
           <p className="mt-5 text-base leading-7 text-ink-muted">
             Service area includes Brunswick along with St. Simons Island, Jekyll Island,
             Sea Island, and nearby Golden Isles communities.

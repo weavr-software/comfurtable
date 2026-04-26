@@ -59,6 +59,9 @@ const pricingOptions = [
   },
 ];
 
+const memorialAddOnIntro =
+  "Optional memorial paw prints are available upon request and can be arranged when you schedule online or when you call or text Dr. Weaver.";
+
 const faqs = [
   {
     question: "Will my pet feel pain?",
@@ -266,6 +269,30 @@ export default function Home() {
                   support with memorial and grief resource guidance.
                 </p>
               </div>
+              <div className="mt-4 rounded-2xl border border-border bg-white px-5 py-5">
+                <p className="text-lg font-semibold text-brand-800">Optional memorial add-ons</p>
+                <p className="mt-2 text-base leading-7 text-ink-muted">
+                  {memorialAddOnIntro}
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {config.memorialAddOns.map((item) => (
+                    <div
+                      key={item.name}
+                      className="rounded-2xl border border-border bg-bg px-4 py-4"
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="text-base font-semibold text-brand-900">{item.name}</p>
+                        <span className="rounded-full bg-brand-700 px-3 py-1 text-sm font-semibold text-white">
+                          {item.price}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-sm leading-6 text-ink-muted">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="grid gap-4">
               {pricingOptions.map((option) => (
@@ -377,6 +404,9 @@ export default function Home() {
             Some families want to speak with a person right away. Others prefer to begin
             with an online request. Either way, we&apos;ll guide you through next steps with
             care.
+          </p>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-ink-muted">
+            {memorialAddOnIntro}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="bg-brand-700">

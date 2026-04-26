@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "In-Home Pet Euthanasia in Brunswick & the Golden Isles | Comfurtable",
   description:
-    "Gentle, compassionate in-home pet euthanasia in Brunswick, St. Simons Island, Jekyll Island, Sea Island, and the Golden Isles. Dr. Missy Weaver provides end-of-life care at home with 25+ years of veterinary experience.",
+    "Gentle, compassionate in-home pet euthanasia in Brunswick, St. Simons Island, Jekyll Island, Sea Island, and the Golden Isles. Dr. Missy Weaver provides end-of-life care at home, cremation coordination, and memorial paw print keepsakes.",
   keywords: [
     "in-home pet euthanasia",
     "in-home pet euthanasia Brunswick GA",
@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     "dog euthanasia at home",
     "cat euthanasia at home",
     "pet cremation services",
+    "clay paw print memorial",
+    "ink paw print memorial",
+    "pet memorial keepsakes",
     "Dr. Missy Weaver",
     "University of Georgia veterinarian Brunswick",
   ],
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     url: config.siteUrl,
     title: "In-Home Pet Euthanasia in Brunswick & the Golden Isles | Comfurtable",
     description:
-      "Compassionate in-home pet euthanasia and end-of-life care for families in Brunswick and the Golden Isles with Dr. Missy Weaver.",
+      "Compassionate in-home pet euthanasia, cremation coordination, and memorial paw print keepsakes for families in Brunswick and the Golden Isles with Dr. Missy Weaver.",
     siteName: "Comfurtable",
     images: [
       {
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "In-Home Pet Euthanasia in Brunswick & the Golden Isles | Comfurtable",
     description:
-      "Gentle, compassionate pet euthanasia at home in Brunswick, St. Simons, Jekyll Island, Sea Island, and nearby Golden Isles communities.",
+      "Gentle, compassionate pet euthanasia at home in Brunswick, St. Simons, Jekyll Island, Sea Island, and nearby Golden Isles communities, with memorial paw print add-ons available.",
     images: ["/logo/comfurtable-large.png"],
   },
   robots: {
@@ -85,7 +88,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "VeterinaryCare",
     "name": config.businessName,
-    "description": "Compassionate in-home pet euthanasia and end-of-life care in Brunswick and the Golden Isles",
+    "description": "Compassionate in-home pet euthanasia, aftercare coordination, and memorial keepsakes in Brunswick and the Golden Isles",
     "url": config.siteUrl,
     "logo": `${config.siteUrl}/logo/comfurtable-large.png`,
     "image": `${config.siteUrl}/art/hero.png`,
@@ -180,9 +183,26 @@ export default function RootLayout({
           },
           "price": "600",
           "priceCurrency": "USD"
-        }
+        },
+        ...config.memorialAddOns.map((item) => ({
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": item.name,
+            "description": item.description
+          },
+          "price": item.priceValue,
+          "priceCurrency": "USD"
+        }))
       ]
-    }
+    },
+    "knowsAbout": [
+      "In-home pet euthanasia",
+      "Pet cremation coordination",
+      "Memorial paw prints",
+      "Clay paw print keepsakes",
+      "Ink paw print keepsakes"
+    ]
   };
 
   return (

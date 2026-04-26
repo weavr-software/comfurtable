@@ -24,4 +24,18 @@ export const config = {
      * Example: "comfurtable-pets/in-home-euthanasia"
      */
     calComLink: "comfurtable-pets/in-home-euthanasia",
+    memorialAddOns: [
+        {
+            name: "Ink paw print",
+            price: "$50",
+            priceValue: "50",
+            description: "A simple memorial keepsake created with your pet's paw print.",
+        },
+        {
+            name: "Clay paw print",
+            price: "$60",
+            priceValue: "60",
+            description: "A clay impression keepsake made from your pet's paw print.",
+        },
+    ],
 } as const;
