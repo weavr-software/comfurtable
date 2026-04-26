@@ -12,7 +12,7 @@ export function Footer() {
           <Image src="/logo/comfurtable-icon.png" alt="Comfurtable in-home pet euthanasia logo" width={36} height={36} />
           <div>
             <Image src="/logo/comfurtable-header.png" alt="Comfurtable - Compassionate pet care" width={180} height={36} />
-            <p className="text-xs text-ink-muted">Gentle goodbyes at home</p>
+            <p className="text-xs text-ink-muted">Test</p>
           </div>
         </div>
         <div className="text-sm text-ink-muted flex flex-col gap-2">

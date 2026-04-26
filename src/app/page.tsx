@@ -59,7 +59,7 @@ export default function Home() {
         <Container className="relative z-10 flex flex-col items-center justify-center h-full">
           <div className="flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl sm:text-7xl font-bold tracking-tight mb-6">
-              Gentle goodbyes at home
+              Test
             </h1>
             <p className="text-base text-lg leading-relaxed text-ink-muted font-bold max-w-xl mb-8">
               In-home euthanasia and end-of-life care for pets—centered on compassion, dignity, and support for your family.
