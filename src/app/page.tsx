@@ -130,9 +130,9 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button asChild size="lg" className="bg-brand-700">
-                <a href={config.phoneHref}>Call / Text now</a>
-              </Button>
+              <div className="inline-flex items-center justify-center rounded-full bg-brand-700 px-6 py-3 text-lg font-medium text-white">
+                {config.phoneDisplay}
+              </div>
               <Button asChild size="lg" variant="secondary">
                 <Link href="#what-to-expect">What to expect</Link>
               </Button>
