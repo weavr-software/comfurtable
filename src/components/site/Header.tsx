@@ -42,13 +42,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={config.phoneHref}
-            className="hidden sm:inline-block rounded-full border border-border-soft px-4 py-2 text-sm hover:bg-bg-subtle"
-            aria-label={`Call Comfurtable at ${config.phoneDisplay}`}
+          <div
+            className="hidden sm:inline-block rounded-full border border-border-soft px-4 py-2 text-sm text-ink-muted"
+            aria-label={`Comfurtable phone number ${config.phoneDisplay}`}
           >
-            Call / Text
-          </a>
+            {config.phoneDisplay}
+          </div>
           <Button className="hidden sm:inline-flex" asChild>
             <Link href="/#book">Schedule</Link>
           </Button>
