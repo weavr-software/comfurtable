@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { useState } from "react";
+import { config } from "@/lib/config";
 
 export function Footer() {
   const [showPolicy, setShowPolicy] = useState(false);
@@ -12,15 +14,15 @@ export function Footer() {
           <Image src="/logo/comfurtable-icon.png" alt="Comfurtable in-home pet euthanasia logo" width={36} height={36} />
           <div>
             <Image src="/logo/comfurtable-header.png" alt="Comfurtable - Compassionate pet care" width={180} height={36} />
-            <p className="text-xs text-ink-muted">Gentle goodbyes at home</p>
+            <p className="text-xs text-ink-muted">In-home pet euthanasia in Brunswick and the Golden Isles</p>
           </div>
         </div>
         <div className="text-sm text-ink-muted flex flex-col gap-2">
           <div>
-            © {new Date().getFullYear()} comfurtable •{" "}
-            <a className="underline underline-offset-4" href="mailto:confurtablepets@gmail.com" aria-label="Email Comfurtable">confurtablepets@gmail.com</a> •{" "}
-            <a href="tel:+1-912-357-3329" className="underline underline-offset-4" aria-label="Call Comfurtable at (912) 357-3329">
-              (912)-357-3329
+            © {new Date().getFullYear()} {config.businessName} •{" "}
+            <a className="underline underline-offset-4" href={`mailto:${config.email}`} aria-label="Email Comfurtable">{config.email}</a> •{" "}
+            <a href={config.phoneHref} className="underline underline-offset-4" aria-label={`Call Comfurtable at ${config.phoneDisplay}`}>
+              {config.phoneDisplay}
             </a>
           </div>
           <button
@@ -55,10 +57,10 @@ export function Footer() {
                   Messages are recurring, and message frequency varies.
                 </li>
                 <li>
-                  Contact Melissa R Weaver DVM, PC Comfurtable at (912)-207-8612 or confurtablepets@gmail.com for HELP or to STOP receiving messages.
+                  Contact Melissa R Weaver DVM, PC Comfurtable at {config.phoneDisplay} or {config.email} for HELP or to STOP receiving messages.
                 </li>
                 <li>
-                  <strong>Opt-Out:</strong> You can opt out of the SMS list at any time by texting, emailing, or replying STOP or UNSUBSCRIBE to confurtablepets@gmail.com or (912)-207-8612. After unsubscribing, you will receive a final SMS to confirm you have unsubscribed and we will remove your number from our list within 24 hours.
+                  <strong>Opt-Out:</strong> You can opt out of the SMS list at any time by texting, emailing, or replying STOP or UNSUBSCRIBE to {config.email} or {config.phoneDisplay}. After unsubscribing, you will receive a final SMS to confirm you have unsubscribed and we will remove your number from our list within 24 hours.
                 </li>
                 <li>
                   You can send HELP for additional assistance, and you will receive a text including our phone number, email, and website. We are here to help you.

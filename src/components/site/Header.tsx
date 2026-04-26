@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { config } from "@/lib/config";
 
 export function Header() {
   return (
@@ -33,22 +34,23 @@ export function Header() {
     </div>
 
         <nav className="hidden md:flex items-center gap-6 text-sm" aria-label="Main navigation">
-          <Link href="#services" className="hover:underline underline-offset-4">Services</Link>
-          <Link href="#how" className="hover:underline underline-offset-4">How it works</Link>
-          <Link href="#areas" className="hover:underline underline-offset-4">Service areas</Link>
-          <Link href="#faq" className="hover:underline underline-offset-4">FAQ</Link>
+          <Link href="/#what-to-expect" className="hover:underline underline-offset-4">What to expect</Link>
+          <Link href="/#pricing" className="hover:underline underline-offset-4">Pricing</Link>
+          <Link href="/#areas" className="hover:underline underline-offset-4">Service areas</Link>
+          <Link href="/how-do-i-know-its-time" className="hover:underline underline-offset-4">When it&apos;s time</Link>
+          <Link href="/#faq" className="hover:underline underline-offset-4">FAQ</Link>
         </nav>
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:+1-912-357-3329"
+            href={config.phoneHref}
             className="hidden sm:inline-block rounded-full border border-border-soft px-4 py-2 text-sm hover:bg-bg-subtle"
-            aria-label="Call Comfurtable at (912) 357-3329"
+            aria-label={`Call Comfurtable at ${config.phoneDisplay}`}
           >
-            Call
+            Call / Text
           </a>
-          <Button className="hidden" asChild>
-            <Link className="w-20" href="#book">Book</Link>
+          <Button className="hidden sm:inline-flex" asChild>
+            <Link href="/#book">Schedule</Link>
           </Button>
         </div>
       </Container>

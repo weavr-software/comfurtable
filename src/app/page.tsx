@@ -1,127 +1,329 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { Badge } from "@/components/ui/Badge";
-import Cal, { getCalApi } from "@calcom/embed-react";
-import { ServicesSection } from "@/components/ui/ServicesSection";
-import { HowItWorks } from "@/components/ui/HowItWorks";
+import BookingWidget from "@/components/ui/BookingWidget";
 import { config } from "@/lib/config";
 
-function BookingWidget() {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "in-home-euthanasia" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-    })();
-  }, []);
+const heroPoints = [
+  "Call or text anytime for guidance",
+  "Same-day or next-day availability when possible",
+  "No pressure, just support and clear next steps",
+];
 
-  return (
-    <div className="rounded-2xl border border-border overflow-hidden">
-      <Cal
-        namespace="in-home-euthanasia"
-        calLink={config.calComLink}
-        style={{ width: "100%", height: "640px", overflow: "auto" }}
-        config={{ layout: "month_view" }}
-      />
-    </div>
-  );
-}
+const visitSteps = [
+  {
+    title: "Arrival and conversation",
+    description:
+      "Dr. Weaver begins by listening to your concerns, answering questions, and helping your family decide what feels right for your pet.",
+  },
+  {
+    title: "Gentle sedation",
+    description:
+      "Your pet receives pain relief and sedation first, allowing them to relax and fall asleep peacefully in a familiar place.",
+  },
+  {
+    title: "Final goodbye",
+    description:
+      "Once your pet is fully comfortable, Dr. Weaver performs the final step gently and without rushing your family.",
+  },
+  {
+    title: "Aftercare support",
+    description:
+      "We coordinate cremation options, memorial choices, and grief resources so you are not left figuring everything out alone.",
+  },
+];
+
+const pricingOptions = [
+  {
+    title: "In-home euthanasia",
+    price: "$400",
+    details:
+      "Includes the home visit, gentle sedation, peaceful euthanasia, time for goodbyes, and guidance for families planning home burial.",
+  },
+  {
+    title: "With communal cremation",
+    price: "$500",
+    details:
+      "Includes the full visit plus respectful aftercare coordination when you would like cremation without the return of ashes.",
+  },
+  {
+    title: "With private cremation",
+    price: "$600",
+    details:
+      "Includes the full visit, private cremation, an urn, and the return of your pet's ashes within about one to two weeks.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Will my pet feel pain?",
+    answer:
+      "Comfort is the priority throughout the visit. Sedation and pain medication are given first so your pet can relax and fall asleep peacefully before the final medication is administered.",
+  },
+  {
+    question: "How long does an in-home visit take?",
+    answer:
+      "Most visits take around 45 to 90 minutes, depending on your pet's needs and how much time your family would like for conversation and goodbyes.",
+  },
+  {
+    question: "Can children or other pets be present?",
+    answer:
+      "Yes. Dr. Weaver can help you decide how to include children and other pets in a way that feels supportive and appropriate for your family.",
+  },
+  {
+    question: "Can the visit happen outside?",
+    answer:
+      "Often, yes. If your pet is most comfortable on a porch, in the yard, or in another favorite spot at home, Dr. Weaver will do her best to accommodate that setting safely.",
+  },
+  {
+    question: "What if I'm not sure it's time yet?",
+    answer:
+      "You do not need to be completely certain before reaching out. Dr. Weaver can talk through quality-of-life changes, comfort concerns, and what you are seeing at home so you have guidance without pressure.",
+  },
+  {
+    question: "How far in advance should we book?",
+    answer:
+      "Same-day appointments are sometimes available. When possible, reaching out a little early helps with scheduling, but families are always welcome to call when needs feel urgent.",
+  },
+];
 
 export default function Home() {
-
   return (
     <main className="min-h-screen bg-bg text-ink" spellCheck={false}>
       <Header />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden min-h-[70vh] flex items-center" aria-label="Welcome to Comfurtable">
-        <div className="absolute inset-0 w-full h-full z-0">
+      <section
+        className="relative overflow-hidden border-b border-border"
+        aria-label="Comfurtable home"
+      >
+        <div className="absolute inset-0">
           <Image
             src="/art/hero.png"
-            alt="Peaceful in-home pet euthanasia - compassionate veterinary care"
+            alt="Compassionate in-home pet euthanasia care in Brunswick and the Golden Isles"
             fill
-            style={{
-              objectFit: "fill", // Stretches image to fill both width and height
-              objectPosition: "center"
-            }}
-            className="pointer-events-none select-none"
             priority
+            className="object-cover object-center opacity-20"
           />
-          <div className="absolute inset-0 bg-heroGlow mix-blend-soft-light" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(250,248,243,0.82),rgba(250,248,243,0.95))]" />
         </div>
-        <Container className="relative z-10 flex flex-col items-center justify-center h-full">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl sm:text-7xl font-bold tracking-tight mb-6">
-              Gentle goodbyes at home
-            </h1>
-            <p className="text-base text-lg leading-relaxed text-ink-muted font-bold max-w-xl mb-8">
-              In-home euthanasia and end-of-life care for pets—centered on compassion, dignity, and support for your family.
+        <Container className="relative grid gap-10 py-16 md:py-24 lg:grid-cols-[1.3fr_0.9fr] lg:gap-12">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+              In-home pet euthanasia in Brunswick and the Golden Isles
             </p>
-            <Button asChild
-              size="lg"
-              variant="secondary"
-              className="bg-bg border-brand-600 border-2"
-            >
-              <Link href="#book">Book a Consultation</Link>
-            </Button>
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-brand-900 sm:text-5xl lg:text-6xl">
+              Gentle, compassionate end-of-life care in the comfort of your home
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-muted">
+              You don&apos;t have to go through this alone. {config.doctorName} offers
+              peaceful in-home pet euthanasia, honest guidance, and support for
+              families in Brunswick, St. Simons Island, Jekyll Island, Sea Island,
+              and nearby Golden Isles communities.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg" className="bg-brand-700">
+                <a href={config.phoneHref}>Call / Text now</a>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="#what-to-expect">What to expect</Link>
+              </Button>
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {heroPoints.map((point) => (
+                <div
+                  key={point}
+                  className="rounded-2xl border border-border bg-white/80 px-4 py-4 text-sm text-ink-muted shadow-card"
+                >
+                  {point}
+                </div>
+              ))}
+            </div>
           </div>
+
+          <Card className="bg-white/90 p-6 sm:p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+              Reach us anytime
+            </p>
+            <p className="mt-3 text-3xl font-semibold text-brand-900">
+              {config.phoneDisplay}
+            </p>
+            <p className="mt-3 text-base leading-7 text-ink-muted">
+              Same-day or next-day availability when possible. We&apos;ll help you
+              understand your options, what to expect, and what next steps make sense
+              for your pet and family.
+            </p>
+            <div className="mt-6 grid gap-3">
+              <Button asChild size="lg" className="w-full justify-center bg-brand-700">
+                <a href={config.phoneHref}>Call now</a>
+              </Button>
+              <Button asChild size="lg" variant="secondary" className="w-full justify-center">
+                <a href={config.smsHref}>Text now</a>
+              </Button>
+              <Button asChild size="lg" variant="ghost" className="w-full justify-center">
+                <Link href="#book">Schedule online</Link>
+              </Button>
+            </div>
+            <p className="mt-5 text-sm leading-6 text-ink-muted">
+              Serving {config.serviceAreaLabel}. No pressure, just support.
+            </p>
+          </Card>
         </Container>
       </section>
-      {/* Services */}
-      <ServicesSection />
 
-      {/* How it works */}
-      <HowItWorks />
+      <Section className="pb-12">
+        <Container>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <SectionHeading>
+                Meet <span className="text-brand-600">Dr. Weaver</span>
+              </SectionHeading>
+              <p className="text-lg leading-8 text-ink-muted">
+                For more than 25 years, Dr. Missy Weaver has cared for pets and the
+                people who love them across the Golden Isles. A University of Georgia
+                graduate and longtime local veterinarian, she created Comfurtable to
+                give families a gentler way to say goodbye at home with privacy,
+                compassion, and time to breathe.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-ink-muted">
+                Families can expect a calm presence, clear explanations, and space to
+                move at their own pace. This work is deeply personal, and every visit
+                is centered on comfort, dignity, and emotional support.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-border bg-white px-4 py-4">
+                  <p className="text-lg font-semibold text-brand-800">25+ years of experience</p>
+                  <p className="mt-1 text-sm leading-6 text-ink-muted">
+                    Trusted small-animal veterinarian serving Brunswick and the Golden Isles.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-white px-4 py-4">
+                  <p className="text-lg font-semibold text-brand-800">UGA-trained, locally known</p>
+                  <p className="mt-1 text-sm leading-6 text-ink-muted">
+                    Longstanding community reputation and deep local relationships.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="justify-self-center">
+              <Image
+                src="/art/woman-and-cat.png"
+                alt="Dr. Missy Weaver with a cat"
+                width={520}
+                height={520}
+                className="w-full max-w-md rounded-2xl border border-border bg-white object-cover shadow-card"
+              />
+            </div>
+          </div>
+        </Container>
+      </Section>
 
-      {/* Service areas */}
+      <Section id="what-to-expect" className="pt-0">
+        <Container>
+          <SectionHeading>
+            What happens during an <span className="text-brand-600">in-home visit</span>
+          </SectionHeading>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {visitSteps.map((step, index) => (
+              <Card key={step.title} className="h-full p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-600">
+                  Step {index + 1}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold text-brand-900">{step.title}</h3>
+                <p className="mt-3 text-base leading-7 text-ink-muted">
+                  {step.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section id="pricing" className="pt-0">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+            <div>
+              <SectionHeading>
+                Transparent <span className="text-brand-600">pricing</span>
+              </SectionHeading>
+              <p className="text-lg leading-8 text-ink-muted">
+                Families often feel more at ease when they know what is included. Our
+                base in-home euthanasia service begins at $400 and always includes
+                compassionate guidance, the home visit itself, gentle sedation, and
+                time for meaningful goodbyes.
+              </p>
+              <div className="mt-6 rounded-2xl border border-border bg-brand-50 px-5 py-5">
+                <p className="text-lg font-semibold text-brand-800">What&apos;s included</p>
+                <p className="mt-2 text-base leading-7 text-ink-muted">
+                  Travel throughout Brunswick and the Golden Isles, clear explanation of
+                  the process, coordination for cremation when selected, and follow-up
+                  support with memorial and grief resource guidance.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-4">
+              {pricingOptions.map((option) => (
+                <Card key={option.title} className="p-6">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-brand-900">{option.title}</h3>
+                      <p className="mt-2 text-base leading-7 text-ink-muted">
+                        {option.details}
+                      </p>
+                    </div>
+                    <div className="rounded-full bg-brand-700 px-4 py-2 text-base font-semibold text-white">
+                      {option.price}
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       <Section id="areas" className="pt-0">
         <Container>
-          <Card className="p-6">
-            <SectionHeading>Our <br /><span className="text-brand-600 text-4xl">Service Areas</span></SectionHeading>
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
-              <div className="space-y-3">
-                <p className="text-xl text-ink-muted">
-                  Southeast Georgia
-                  <br />
-                  <span className="font-semibold text-sm text-brand-700">Expanding soon</span>
+          <Card className="p-6 sm:p-8">
+            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+              <div>
+                <SectionHeading>
+                  Serving <span className="text-brand-600">Brunswick and the Golden Isles</span>
+                </SectionHeading>
+                <p className="text-lg leading-8 text-ink-muted">
+                  Comfurtable provides in-home pet euthanasia visits for families in
+                  Brunswick, St. Simons Island, Jekyll Island, Sea Island, and nearby
+                  Southeast Georgia communities.
                 </p>
-                <ul className="grid grid-cols-2 gap-2 text-xl">
-                  {[
-                    "St. Simons Island",
-                    "Brunswick",
-                    "Jekyll Island",
-                    "Sea Island",
-                  ].map((city) => (
-                    <li key={city} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
-                      {city}
+                <ul className="mt-5 grid gap-3 text-base text-ink-muted sm:grid-cols-2">
+                  {config.serviceAreas.map((city) => (
+                    <li key={city} className="rounded-2xl border border-border bg-bg px-4 py-3">
+                      {city}, Georgia
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="mt-2">
-                  <Link href="#book">Check availability</Link>
-                </Button>
-                <div></div>
-                <Badge className=" mt-4">
-                  If you&apos;re outside our current area, please{" "}
-                  <a href="mailto:comfurtablepet@gmail.com" className="underline underline-offset-4">
-                    contact us
-                  </a>{" "}
-                  to discuss options.
-                </Badge>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <Button asChild>
+                    <a href={config.phoneHref}>Call / Text now</a>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <Link href="/in-home-pet-euthanasia-brunswick-ga">
+                      Brunswick service page
+                    </Link>
+                  </Button>
+                </div>
               </div>
-              <div className="rounded-2xl overflow-hidden border border-border">
+              <div className="overflow-hidden rounded-2xl border border-border">
                 <iframe
                   title="Service area map"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-81.66%2C31.04%2C-81.27%2C31.33&layer=mapnik&marker=31.149%2C-81.495"
-                  className="w-full h-[340px] md:h-[420px]"
+                  className="h-[320px] w-full md:h-[420px]"
                 />
               </div>
             </div>
@@ -129,125 +331,103 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Bio */}
-      <Section id="bio" className="pt-0">
+      <Section className="pt-0">
         <Container>
-          <Card className="p-6">
-
-            <SectionHeading>Meet <br></br> <span className="text-brand-600 text-4xl">Dr. Weaver</span></SectionHeading>
-            <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
-              <Image
-                src="/art/woman-and-cat.png"
-                alt="Dr. Missy Weaver - Veterinarian with 25+ years experience in pet care"
-                width={300}
-                height={80}
-                className="rounded-lg"
-              />
-              <div className="space-y-3 text-lg">
-                <p>
-                  Dr. Missy Weaver is a graduate of the University of Georgia and has been
-                  working in the Golden Isles veterinary community for over 25 years.
-                  For 14 years, she has been the lead veterinarian at the Humane Society of South Coastal Georgia.
-                  She has spent her career advocating for small animal welfare and the human/animal bond. In her free time,
-                  Dr Weaver and her husband, Dr. John Weaver, a local orthodontist are raising 5 boys, 3 dogs and 3 cats.
-                  She enjoys gardening, spending time with her family and traveling.
-                </p>
-                <ul className="grid sm:grid-cols-2 gap-2">
-                  <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-600" /> 25+ years in small-animal medicine</li>
-                  <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-600" /> Head vet for a local no-kill humane society</li>
-                  <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-600" /> Leads public low-cost spay/neuter days</li>
-                  <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-600" /> Advocate for microchipping & preventive care</li>
-                </ul>
-              </div>
-            </div>
-          </Card>
+          <div className="grid gap-5 lg:grid-cols-2">
+            <Card className="p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+                Gentle guidance
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-brand-900">
+                How do I know it&apos;s time?
+              </h3>
+              <p className="mt-3 text-base leading-7 text-ink-muted">
+                Learn what quality-of-life changes to look for, how families think about
+                timing, and why there is rarely a single perfect moment.
+              </p>
+              <Button asChild className="mt-5">
+                <Link href="/how-do-i-know-its-time">Read the guide</Link>
+              </Button>
+            </Card>
+            <Card className="p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+                Local care
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-brand-900">
+                In-home euthanasia in Brunswick, GA
+              </h3>
+              <p className="mt-3 text-base leading-7 text-ink-muted">
+                See a Brunswick-focused overview of service area details, what is
+                included, and how to reach Dr. Weaver quickly when you need help.
+              </p>
+              <Button asChild className="mt-5">
+                <Link href="/in-home-pet-euthanasia-brunswick-ga">View Brunswick page</Link>
+              </Button>
+            </Card>
+          </div>
         </Container>
       </Section>
 
-      {/* Booking Calendar */}
       <Section id="book" className="pt-0">
         <Container>
-          <SectionHeading>Book a Service</SectionHeading>
-          <details className="group mt-4">
-            <summary className="cursor-pointer text-2xl font-semibold text-brand-700 flex items-center justify-between py-2 px-3 rounded-lg bg-brand-50 hover:bg-brand-100 transition">
-              What’s included?
-              <span className="ml-2 text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <div className="mt-3 text-base text-xl text-ink-muted px-3 pb-2">
-              This will include time for Dr. Weaver to meet with you and your pet to answer any questions that your
-              family has about the euthanasia process. <br /> <br />Your pet will first quietly receive pain and sedation medications.
-              This will allow you time for gentle goodbyes. The final steps will be under general anesthesia so there is no discomfort. You may remain with your pet throughout this process and can spend private time with your pet at any point.
-              <br /><br />After your goodbyes, if cremation is elected, Dr. Weaver will respectfully prepare and transfer your loved one to the crematory. If burial is elected, Dr. Weaver does not have the capability to assist at this time.
-            </div>
-          </details>
-          <div className="my-8">
+          <SectionHeading>
+            Call, text, or <span className="text-brand-600">schedule online</span>
+          </SectionHeading>
+          <p className="max-w-3xl text-lg leading-8 text-ink-muted">
+            Some families want to speak with a person right away. Others prefer to begin
+            with an online request. Either way, we&apos;ll guide you through next steps with
+            care.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Button asChild size="lg" className="bg-brand-700">
+              <a href={config.phoneHref}>Call / Text now</a>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <a href={`mailto:${config.email}`}>Email us</a>
+            </Button>
+          </div>
+          <div className="mt-8">
             <BookingWidget />
           </div>
         </Container>
       </Section>
 
-      {/* FAQ */}
-      <Section id="faq" className="pt-0 pb-28">
+      <Section id="faq" className="pt-0 pb-16">
         <Container>
           <SectionHeading>Frequently asked questions</SectionHeading>
           <div className="grid gap-4">
-            {[
-              {
-                q: "What should we expect during the visit?",
-                a:
-                  "Dr. Weaver will discuss any final questions or concerns with your family. Next, your pet is gently sedated and time is allowed for private goodbyes. Following this step, your pet will be anesthetized to ensure absolutely no pain, fear or discomfort. Finally, Dr. Weaver will administer the euthanasia medication. We will move at your family’s pace and welcome favorite blankets, music, or rituals.",
-              },
-              {
-                q: "Can children or other pets be present?",
-                a:
-                  "Yes. Dr. Weaver will guide you on ways to involve them in a healthy, supportive manner.",
-              },
-              {
-                q: "How far in advance should we book?",
-                a:
-                  "Same-day consults are sometimes available. For preferred times, booking 2–3 days in advance is best.",
-              },
-              {
-                q: "How will I know when its time?",
-                a:
-                  "You and your family will begin to notice changes in eating, drinking, activity and play. You may see pain and discomfort that can no longer be treated successfully. If you trust your bond with your pet, you will know when it is time to say goodbye. ",
-              },
-              {
-                q: "What about aggressive pets or behavior problems?",
-                a:
-                  "Please discuss any issues with Dr. Weaver in advance of the appointment. We have experience dealing with difficult behaviors, and can offer medication and other behavior modification support to allow for a more peaceful appointment for your family and your pet. ",
-              },
-            ].map(({ q, a }) => (
-              <details key={q} className="group card p-5">
-                <summary className="cursor-pointer text-brand-600 list-none font-medium flex items-center justify-between">
-                  {q}
-                  <span className="transition-transform group-open:rotate-45 text-xl">+</span>
+            {faqs.map((faq) => (
+              <details key={faq.question} className="card p-5">
+                <summary className="cursor-pointer list-none text-lg font-medium text-brand-700">
+                  {faq.question}
                 </summary>
-                <p className="mt-2 text-sm text-ink-muted">{a}</p>
+                <p className="mt-3 text-base leading-7 text-ink-muted">{faq.answer}</p>
               </details>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* Contact Us */}
-      <Section id="contact" className="pt-0 pb-28">
+      <Section id="contact" className="pt-0 pb-24">
         <Container>
-          <SectionHeading>Contact Us</SectionHeading>
           <Card className="p-8 text-center">
-            <p className="text-lg text-ink-muted mb-6">
-              Have questions or need to discuss your pet&apos;s care? We&apos;re here to help.
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+              We&apos;re here to help
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild variant="primary" size="lg">
-                <a href="mailto:comfurtablepets@gmail.com">
-                  Email Us
-                </a>
+            <h2 className="mt-3 text-3xl font-semibold text-brand-900">
+              Reach out whenever you&apos;re ready
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-ink-muted">
+              Call or text for immediate support, or email with questions about your
+              pet&apos;s comfort, the timing, cremation options, memorial options, or grief
+              resources.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button asChild size="lg" className="bg-brand-700">
+                <a href={config.phoneHref}>Call / Text {config.phoneDisplay}</a>
               </Button>
-              <Button asChild variant="secondary" size="lg">
-                <a href="tel:+1-912-357-3329">
-                  Call (912) 357-3329
-                </a>
+              <Button asChild size="lg" variant="secondary">
+                <a href={`mailto:${config.email}`}>{config.email}</a>
               </Button>
             </div>
           </Card>

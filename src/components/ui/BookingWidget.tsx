@@ -9,11 +9,9 @@ export default function BookingWidget() {
   return (
     <div className="rounded-2xl border border-border overflow-hidden">
       <Cal
-        // Use your handle/event path, or a profile path
-        calLink={`cal.com/${config.calComLink}`}
+        calLink={config.calComLink}
         style={{ width: "100%", height: "600px" }}
-      // Optional embed config:
-      // config={{ theme: "light", layout: "month_view", hideEventTypeDetails: false }}
+        config={{ layout: "month_view" }}
       />
     </div>
   );
